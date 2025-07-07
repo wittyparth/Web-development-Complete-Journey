@@ -7,4 +7,4 @@ class PaymentService {
         void paymentService(double amount) {
             payment->pay(amount);
         }
-}
+};
