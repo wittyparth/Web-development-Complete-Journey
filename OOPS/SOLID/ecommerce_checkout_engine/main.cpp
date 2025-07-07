@@ -17,7 +17,7 @@ int main() {
 cart.addItem("Shoes", 2000, 1);
 cart.addItem("T-Shirt", 800, 2);
 
-IDiscount* discount = new PercentageDiscount(10); // Or FlatDiscount(300)
+IDiscount* discount = new PercentageDiscount(100); // Or FlatDiscount(300)
 discountProcessor checkout(&cart, discount);
 checkout.processDiscount();
 
