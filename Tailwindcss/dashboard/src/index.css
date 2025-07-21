@@ -1,0 +1,110 @@
+/* app.css or globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+/* app.css or globals.css */
+
+/* 1. Import Tailwind's base, components, and utilities. */
+@import "tailwindcss";
+
+/*
+  2. Define the design system using proper naming conventions.
+  All custom properties are prefixed for clarity and scalability (e.g., --color-*, --font-*).
+*/
+@theme {
+  /* -- Colors -- */
+  /* Prefixed with --color- and using HEX values. */
+  --color-background: #13131A;
+  --color-foreground: #FFFFFF;
+
+  --color-card: #1C1C24;
+  --color-card-foreground: #EBEBEB;
+
+  --color-popover: #24252C;
+  --color-popover-foreground: #EBEBEB;
+
+  --color-primary: #4A69FF;
+  --color-primary-foreground: #FFFFFF;
+
+  --color-secondary: #1C1C24;
+  --color-secondary-foreground: #EBEBEB;
+
+  --color-muted: #24252C;
+  --color-muted-foreground: #8A8A94;
+
+  --color-destructive: #E53E3E;
+  --color-destructive-foreground: #FFFFFF;
+
+  --color-border: #2D2D3A;
+  --color-input: #2D2D3A;
+  --color-ring: #4A69FF;
+
+  /* Custom status colors */
+  --color-status-active: #18A376;
+  --color-status-ending-from: #F59E0B;
+  --color-status-ending-to: #D97706;
+
+  /* -- Sizing -- */
+  /* Prefixed with --size- */
+  --size-sidebar-width: 256px;
+  --size-icon-nav: 20px;
+  --size-icon-sm: 16px;
+
+  /* -- Border Radius -- */
+  /* Prefixed with --radius- */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* -- Box Shadows -- */
+  /* Prefixed with --shadow- and using rgba for opacity. */
+  --shadow-card: 0 8px 16px rgba(0, 0, 0, 0.2);
+  --shadow-dropdown: 0 10px 20px rgba(0, 0, 0, 0.25);
+  --shadow-button-primary: 0 4px 12px rgba(74, 105, 255, 0.3);
+
+  /* -- Font Families -- */
+  /* Prefixed with --font-family- */
+  --font-family-sans: "Inter", system-ui, sans-serif;
+
+  /* -- Font Sizes -- */
+  /* Prefixed with --font-size- */
+  --font-size-xs: 0.75rem;
+  /* 12px */
+  --font-size-sm: 0.875rem;
+  /* 14px */
+  --font-size-base: 1rem;
+  /* 16px */
+  --font-size-xl: 1.25rem;
+  /* 20px */
+  --font-size-3xl: 1.75rem;
+  /* 28px */
+
+  /* -- Font Weights -- */
+  /* Prefixed with --font-weight- */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+}
+
+/*
+  3. Define custom component classes using the properly named variables.
+*/
+@layer components {
+
+  /* For the primary "Upgrade" button's gradient and shadow */
+  .btn-upgrade {
+    @apply bg-gradient-to-r from-[#5E7AFF] to-[--color-primary];
+    box-shadow: var(--shadow-button-primary);
+  }
+
+  /* For the "Ending Soon" badge's gradient */
+  .badge-ending-soon {
+    @apply bg-gradient-to-r from-[--color-status-ending-from] to-[--color-status-ending-to];
+  }
+
+  /* For the main auction cards' border and shadow */
+  .card-auction {
+    @apply border border-[--color-border] rounded-[--radius-lg];
+    box-shadow: var(--shadow-card);
+  }
+}
